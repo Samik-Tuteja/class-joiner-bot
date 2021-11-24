@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello, <%= studentname %></h1>
+    <form action="/addclass" method="POST">
+        <input type="text" name="classname" id="classname" placeholder="class">
+        <input type="text" name="classlink" id="classlink" placeholder="link">
+        <input type="submit" value="submit">
+    </form>
+    <form action="/joinclass" method="POST">
+        <select name="chooseclass" id="chooseclass">
+        <% for(let i = 0; i < classes.length; i++ ){ %>
+                <option value="<%= classes[i] %>"><%= classes[i] %></option>
+        <% } %>
+    </select>
+        <input type="submit" value="join">
+    </form>
+</body>
+</html>
